@@ -9,20 +9,21 @@ import javax.persistence.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-public class AlunoEntity {
+public class Aluno {
+
 	@Id
 	private long matricula;
-	
+
 	@Column(nullable = false)
 	private String nome;
-	
-	@Column(name = "data_nascimento")
+
+	@Column(name = "data_nascimento", nullable = false)
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate dataNascimento;
-	
-	@Column(unique = false, nullable = false)
+
+	@Column(unique = true)
 	private String cpf;
-	
+
 	@Column(name = "valor_mensalidade", nullable = false)
 	private Float valorMensalidade;
 
